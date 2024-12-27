@@ -33,10 +33,11 @@ export default defineConfig((config) => {
       config.mode !== 'test' && remixCloudflareDevProxy(),
       remixVitePlugin({
         future: {
-          v3_fetcherPersist: true,
-          v3_relativeSplatPath: true,
-          v3_throwAbortReason: true,
-          v3_lazyRouteDiscovery: true
+        v3_fetcherPersist: true,
+        v3_relativeSplatPath: true,
+        v3_throwAbortReason: true,
+        v3_lazyRouteDiscovery: true,
+        v3_singleFetch: true
         },
       }),
       UnoCSS(),
