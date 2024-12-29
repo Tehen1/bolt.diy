@@ -88,18 +88,12 @@ const BASE_COLORS = {
 };
 
 const COLOR_PRIMITIVES = {
-  ...BASE_COLORS,
-  alpha: {
-    white: generateAlphaPalette(BASE_COLORS.white),
-    gray: generateAlphaPalette(BASE_COLORS.gray[900]),
-    red: generateAlphaPalette(BASE_COLORS.red[500]),
-    accent: generateAlphaPalette(BASE_COLORS.accent[500]),
-  },
+...BASE_COLORS
 };
 
 export default defineConfig({
   safelist: [
-    ...Object.keys(customIconCollection[collectionName]||{}).map(x=>`i-bolt:${x}`)    
+    ...Object.keys(customIconCollection[collectionName] || {}).map((x) => (`i-bolt:${x}`))
   ],
   shortcuts: {
     'bolt-ease-cubic-bezier': 'ease-[cubic-bezier(0.4,0,0.2,1)]',
@@ -114,10 +108,16 @@ export default defineConfig({
      */
     ['b', {}],
   ],
-  theme: {
-    colors: {
-      ...COLOR_PRIMITIVES,
-      bolt: {
+theme: {
+colors: {
+    ...BASE_COLORS,
+    alpha: {
+    white: generateAlphaPalette(BASE_COLORS.white),
+    gray: generateAlphaPalette(BASE_COLORS.gray[900]),
+    red: generateAlphaPalette(BASE_COLORS.red[500]),
+    accent: generateAlphaPalette(BASE_COLORS.accent[500]),
+    },
+    bolt: {
         elements: {
           borderColor: 'var(--bolt-elements-borderColor)',
           borderColorActive: 'var(--bolt-elements-borderColorActive)',
